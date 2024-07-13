@@ -9,9 +9,9 @@
           <div class="ml-10 flex items-baseline space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <a href="/" class="<?= urlIs('/') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> hover:bg-gray-700 px-3 py-2 text-sm font-medium rounded-md" aria-current="page">Home</a>
-            <a href="/expenses.php" class="<?= urlIs('/expenses.php') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white rounded-md">Expenses</a>
-            <a href="/income.php" class="<?= urlIs('/income.php') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white rounded-md">Income</a>
-            <a href="/reports.php" class="<?= urlIs('/reports.php') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white rounded-md">Reports</a>
+            <a href="/expenses" class="<?= urlIs('/expenses.php') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white rounded-md">Expenses</a>
+            <a href="/income" class="<?= urlIs('/income.php') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white rounded-md">Income</a>
+            <a href="/reports" class="<?= urlIs('/reports.php') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white rounded-md">Reports</a>
           </div>
         </div>
       </div>

@@ -11,6 +11,14 @@ $routes = [
   '/reports' => 'controllers/reports.php',
 ];
 
+function abort($code) {
+  http_response_code($code);
+  require "views/{$code}.php";
+}
+
+
 if (array_key_exists($uri, $routes)) {
   require $routes[$uri];
+} else {
+  
 }
