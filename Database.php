@@ -4,16 +4,18 @@ class Database
 {
   public $connection;
 
-  public function __construct()
+  public function __construct($config)
   {
     // To connect to MySQL db we need to create a new instance of the PDO class
     // The PDO class expects an argument (the connection string (dsn)) that contains the information needed to connect to the database
-    $dsn = "mysql:host=10.0.20.45;port=3306;dbname=expense_tracking;charset=utf8mb4";
+    $dsn = 'mysql:' . http_build_query($config, '', ';');
 
     // Database credentials
     $username = 'root';
     $password = 'QAZwsx123';
-    $this->connection = new PDO($dsn, $username, $password);
+    $this->connection = new PDO($dsn, $username, $password, [
+      PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+    ]);
   }
 
   public function query($query)
