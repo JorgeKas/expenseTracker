@@ -17,4 +17,4 @@ $transactions = $db->query($query, [$id])->fetch();
 //     echo "<li>" . $transaction['date'] . $transaction['description'] . $transaction['amount'] . "</li>";
 // }
 
-dd($transaction);
+dd($transactions);
