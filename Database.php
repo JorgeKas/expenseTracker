@@ -18,11 +18,11 @@ class Database
     ]);
   }
 
-  public function query($query)
+  public function query($query, $params =[])
   {
     // Effectively prepare the query to send to MySQL where it will be executed
     $statement = $this->connection->prepare($query);
-    $statement->execute();
+    $statement->execute($params);
 
     // The remaining step is to fetch the results of the query
     // Using PDO::FETCH_ASSOC to return an array with only key-value and not indexed data
