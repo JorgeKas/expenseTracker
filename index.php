@@ -1,24 +1,20 @@
 <?php
 
 require "functions.php";
+//require "router.php";
+require "Database.php";
 
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+$config = require('config.php');
 
-$routes = [
-  '/' => 'controllers/index.php',
-  '/expenses' => 'controllers/expenses.php',
-  '/income' => 'controllers/income.php',
-  '/reports' => 'controllers/reports.php',
-];
+$db = new Database($config['database']);
 
-function abort($code) {
-  http_response_code($code);
-  require "views/{$code}.php";
-}
+$id = $_GET['id'];
+$query = "SELECT * FROM transactions where id = ?";
 
+$transactions = $db->query($query, [$id])->fetch();
 
-if (array_key_exists($uri, $routes)) {
-  require $routes[$uri];
-} else {
-  
-}
+// foreach ($transactions as $transaction) {
+//     echo "<li>" . $transaction['date'] . $transaction['description'] . $transaction['amount'] . "</li>";
+// }
+
+dd($transactions);
