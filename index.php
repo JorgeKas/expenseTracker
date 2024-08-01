@@ -1,7 +1,7 @@
 <?php
 
 require "functions.php";
-//require "router.php";
+require "router.php";
 require "Database.php";
 
 $config = require('config.php');
@@ -17,4 +17,4 @@ $transactions = $db->query($query, [$id])->fetch();
 //     echo "<li>" . $transaction['date'] . $transaction['description'] . $transaction['amount'] . "</li>";
 // }
 
-dd($transaction);
+//dd($transactions);
