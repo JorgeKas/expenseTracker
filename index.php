@@ -6,20 +6,6 @@ require "router.php";
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // $id = $_GET['id'];
 // $query = "SELECT * FROM transactions where id = ?";
 

@@ -1,7 +1,7 @@
 <?php
 
-$config = require('config.php');
-$db = new Database($config['database']);
+// $config = require('config.php');
+// $db = new Database($config['database']);
 
 $heading = "Reports";
 
