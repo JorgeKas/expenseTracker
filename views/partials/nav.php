@@ -22,11 +22,11 @@
                   </svg>
                 </button>
               </div>
-              <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+              <div class="absolute right--34 z-10 mt-2 w-40 origin-top-right rounded-md bg-gray-700 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
                 <div class="py-1" role="none">
                   <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                  <a href="/expensesReporting" class="<?= urlIs('/expenseReports.php') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white rounded-md">Expense Reporting</a>
-                  <a href="/incomeReporting" class="<?= urlIs('/incomeReports.php') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white rounded-md">Income Reporting</a>
+                  <a href="/expenseReporting" class="<?= urlIs('/expenseReports.php') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> px-5 py-1 text-sm font-medium hover:bg-gray-700 hover:text-white rounded-md block">Expense Reporting</a>
+                  <a href="/incomeReporting" class="<?= urlIs('/incomeReports.php') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> px-5 py-1 text-sm font-medium hover:bg-gray-700 hover:text-white rounded-md">Income Reporting</a>
                 </div>
               </div>
             </div>
