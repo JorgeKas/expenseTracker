@@ -7,8 +7,9 @@ $routes = [
 '/expenses' => 'controllers/expenses.php',
 '/income' => 'controllers/income.php',
 '/reports' => 'controllers/reports.php',
-'/expenseReporting' => 'controllers/reports/expenseReports.php',
-'/incomeReporting' => 'controllers/reports/incomeReports.php',
+'/transaction' => 'controllers/reports/expenseReport.php',
+'/expenseReporting' => 'controllers/reports/expensesReport.php',
+'/incomeReporting' => 'controllers/reports/incomeReport.php',
 ];
 
 

@@ -8,4 +8,4 @@ $heading = "Expenses Reporting";
 $transactions = $db->query("SELECT * FROM transactions")->fetchAll();
 
 
-require "views/expenseReports.view.php";
+require "views/expensesReport.view.php";
