@@ -4,7 +4,7 @@ $config = require('config.php');
 $db = new Database($config['database']);
 
 $heading = "Expense";
-$currentUserId = 5;
+$currentUserId = 9;
 
 $id = $_GET['id'];
 
