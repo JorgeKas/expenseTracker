@@ -13,19 +13,19 @@
             <a href="/income" class="<?= urlIs('/income.php') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white rounded-md">Income</a>
             <a href="/reports" class="<?= urlIs('/reports.php') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white rounded-md">Reports</a>
 
-            <div class="relative inline-block text-left">
-              <div>
+            <div class="relative inline-block text-left" id="dropduwnButton">
+              <div onclick="toggleDropdown()">
                 <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
-                  Reports
+                    Reports
                   <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                   </svg>
                 </button>
-              </div>
-              <div class="absolute right--34 z-10 mt-2 w-40 origin-top-right rounded-md bg-gray-700 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                </div>
+              <div class="absolute right--34 z-10 mt-2 w-40 origin-top-right rounded-md bg-gray-700 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1" id="dropdown">
                 <div class="py-1" role="none">
                   <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                  <a href="/expenseReporting" class="<?= urlIs('/expenseReports.php') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> px-5 py-1 text-sm font-medium hover:bg-gray-700 hover:text-white rounded-md block">Expense Reporting</a>
+                  <a href="/expenseReporting" class="<?= urlIs('/expense  .php') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> px-5 py-1 text-sm font-medium hover:bg-gray-700 hover:text-white rounded-md block">Expense Reporting</a>
                   <a href="/incomeReporting" class="<?= urlIs('/incomeReports.php') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> px-5 py-1 text-sm font-medium hover:bg-gray-700 hover:text-white rounded-md">Income Reporting</a>
                 </div>
               </div>
@@ -125,4 +125,10 @@
       </div>
     </div>
   </div>
+  <script>
+    function toggleDropdown() {
+      let dropdown = document.querySelector('#dropdown');
+      dropdown.classList.toggle("hidden");
+    }
+  </script>
 </nav>

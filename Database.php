@@ -3,6 +3,7 @@
 class Database
 {
   public $connection;
+  public $statement;
 
   public function __construct($config)
   {
@@ -21,11 +22,34 @@ class Database
   public function query($query, $params =[])
   {
     // Effectively prepare the query to send to MySQL where it will be executed
-    $statement = $this->connection->prepare($query);
-    $statement->execute($params);
+    $this->statement = $this->connection->prepare($query);
+    $this->statement->execute($params);
 
     // The remaining step is to fetch the results of the query
     // Using PDO::FETCH_ASSOC to return an array with only key-value and not indexed data
-    return $statement;
+    //return $statement;
+
+    return $this;
+  }
+
+  public function get()
+  {
+    return $this->statement->fetchAll();
+  }
+
+  public function find()
+  {
+    return $this->statement->fetch();
+  }
+
+  public function findOrFail()
+  {
+    $result = $this->find();
+
+    if (! $result) {
+      abort();
+    }
+
+    return $result;
   }
 }
