@@ -7,7 +7,7 @@
       <?php foreach ($transactions as $transaction) : ?>
         <li>
           <a href="/transaction?id=<?= $transaction['id'] ?>" class="text-blue-500 underline:hover">
-            <?= $transaction['date'] . " " . $transaction['description'] . " " . $transaction['amount'] . "€" . " " . $transaction['details'] ?>
+            <?= htmlspecialchars($transaction['date'] . " " . $transaction['description'] . " " . $transaction['amount'] . "€") ?>
           </a>
         </li>
       <?php endforeach; ?>
