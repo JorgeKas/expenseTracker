@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   foreach ($required_fields as $field => $error_message) {
     // Laracast Logic
-    if ($validator->string($_POST[$field], 1, 150)) {
+    if (!$validator->string($_POST[$field], 1, 150)) {
       $errors[] = $error_message;
     }
 
