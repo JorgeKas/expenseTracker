@@ -12,7 +12,8 @@
               <div>
                 <label for="date" class="block text-sm font-medium text-gray-700">Date</label>
                 <div class="mt-1">
-                  <textarea id="date" name="date" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Enter expense date"></textarea>
+                  <textarea id="date" name="date" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Enter expense date"
+                  ><?= $_POST['date'] ?? '' ?></textarea>
                 </div>
               </div>
             </div>
@@ -20,7 +21,8 @@
               <div>
                 <label for="amount" class="block text-sm font-medium text-gray-700">Amount</label>
                 <div class="mt-1">
-                  <textarea id="amount" name="amount" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Enter expense amount"></textarea>
+                  <textarea id="amount" name="amount" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Enter expense amount"
+                  ><?= $_POST['amount'] ?? '' ?></textarea>
                 </div>
               </div>
             </div>
@@ -28,7 +30,8 @@
               <div>
                 <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                 <div class="mt-1">
-                  <textarea id="description" name="description" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Enter expense description"></textarea>
+                  <textarea id="description" name="description" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Enter expense description"
+                  ><?= $_POST['description'] ?? '' ?></textarea>
                 </div>
               </div>
             </div>
