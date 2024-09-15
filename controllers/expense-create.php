@@ -1,6 +1,9 @@
 <?php
 
-$config = require('config.php');
+require 'Validator.php';
+
+
+$config = require 'config.php';
 $db = new Database($config['database']);
 
 $heading = 'Create a new Expense';
@@ -14,14 +17,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     'description' => 'Description is required'
   ];
 
+  $validator = new Validator();
+
   foreach ($required_fields as $field => $error_message) {
-    if (empty($_POST[$field])) {  
+    // Laracast Logic
+    if (!$validator->string($_POST[$field], 1, 150)) {
       $errors[] = $error_message;
     }
 
-    if (strlen($_POST[$field]) > 255) {
-      $errors[] = 'Field(s) cannot be more than 255 characters long';
-    }
+    // My Logic 10/09/2024
+    // if (empty($_POST[$field])) {  
+    //   $errors[] = $error_message;
+    // }
+
+    // if (strlen($_POST[$field]) > 255) {
+    //   $errors[] = 'Field(s) cannot be more than 255 characters long';
+    // }
 
   }
   if (empty($errors)) {
