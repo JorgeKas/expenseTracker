@@ -14,14 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $required_fields = [
     'date' => 'Date is required', 
     'amount' => 'Amount is required', 
-    'description' => 'Description is required'
+    'description' => 'Description is required or it exceeds max. # of characters',
   ];
 
-  $validator = new Validator();
-
-  foreach ($required_fields as $field => $error_message) {
+    foreach ($required_fields as $field => $error_message) {
     // Laracast Logic
-    if (!$validator->string($_POST[$field], 1, 150)) {
+    if (!Validator::string($_POST[$field], 1, 150)) {
       $errors[] = $error_message;
     }
 
