@@ -13,4 +13,4 @@ $transaction = $db->query("SELECT * FROM transactions WHERE id = :id", ['id' => 
 authorize($transaction['user_id'] === $currentUserId);
 
 
-require "views/expenseReport.view.php";
+require "views/expenses/show.view.php";
