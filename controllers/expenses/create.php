@@ -1,9 +1,9 @@
 <?php
 
-require 'Validator.php';
+require base_path('Core/Validator.php');
 
 
-$config = require 'config.php';
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
 $heading = 'Create a new Expense';
@@ -44,12 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 }
 
-  // if (strlen($_POST['date']) === 0 || strlen($_POST['amount']) === 0 || strlen($_POST['description']) === 0) {
-  //   // if any of the fields are empty, add an error message to the $errors array. How to male all 3 fields on the same line?
-  //   $errors['date'] = 'Date is required';
-  //   $errors['amount'] = 'Amount is required';
-  //   $errors['description'] = 'Description is required';
-  //   }
-
-
-require 'views/expenses/create.view.php';
+view('expenses/create.view.php', [
+      'heading' => 'Create a new Expense',
+      'errors' => $errors ?? [],
+    ]);

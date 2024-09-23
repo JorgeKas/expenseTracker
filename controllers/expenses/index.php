@@ -1,11 +1,14 @@
 <?php
 
-$config = require('config.php');
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
-$heading = "Expenses Reporting";
+//$heading = "Expenses Reporting";
 
 $transactions = $db->query("SELECT * FROM transactions")->get();
 
 
-require "views/expenses/index.view.php";
+view('expenses/index.view.php', [
+      'heading' => 'Expenses Reporting',
+      'transactions' => $transactions,
+    ]);

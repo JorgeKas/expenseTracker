@@ -2,4 +2,6 @@
 
 $heading = "Income";
 
-require "views/income.view.php";
+view("income.view.php", [
+      'heading' => 'Income',
+    ]);

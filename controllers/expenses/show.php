@@ -1,9 +1,9 @@
 <?php
 
-$config = require('config.php');
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
-$heading = "Expense";
+//$heading = "Expense";
 $currentUserId = 9;
 
 $id = $_GET['id'];
@@ -13,4 +13,7 @@ $transaction = $db->query("SELECT * FROM transactions WHERE id = :id", ['id' => 
 authorize($transaction['user_id'] === $currentUserId);
 
 
-require "views/expenses/show.view.php";
+view('expenses/show.view.php', [
+  'heading' => 'Expense',
+  'transaction' => $transaction,
+]);
