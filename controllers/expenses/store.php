@@ -55,8 +55,9 @@ if (!empty($errors)) {
     ]);
   
 
-
-view('expenses/create.view.php', [
-      'heading' => 'Create a new Expense',
-      'errors' => $errors ?? [],
-    ]);
+// after creating the record in the db, redirect to list with all records
+header('Location: /expenseReporting');
+// view('expenses/create.view.php', [
+//       'heading' => 'Create a new Expense',
+//       'errors' => $errors ?? [],
+//     ]);
